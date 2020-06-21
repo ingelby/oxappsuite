@@ -6,12 +6,20 @@ use Ingelby\Appsuite\Minimal\Models\Login\Token;
 
 class LoginHandler extends AbstractHandler
 {
-    protected $routeUri = '/appsuite/api/minimal/login';
-
+    /**
+     * @param array $oxConfig
+     * @param array $clientConfig
+     * @throws \Ingelby\Appsuite\Minimal\Exceptions\AppsuiteConfigurationException
+     */
+    public function __construct(array $oxConfig = [], array $clientConfig = [])
+    {
+        $this->routeUri = '/appsuite/api/minimal/login';
+        parent::__construct($oxConfig, $clientConfig);
+    }
 
     public function token(string $session)
     {
-        Yii::info('Getting token for session: ' . $session);
+        \Yii::info('Getting token for session: ' . $session);
 
         $token = new Token();
         $response = $this->get(
@@ -22,6 +30,8 @@ class LoginHandler extends AbstractHandler
             ]
         );
 
+        var_dump($response);
+        die();
         $token->setAttributes($response);
 
         return $token;
