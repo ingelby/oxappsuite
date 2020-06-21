@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Ingelby\\OxAppsuite\\": "src"
+      "Ingelby\\Appsuite\\": "src"
     }
   },
   "require": {

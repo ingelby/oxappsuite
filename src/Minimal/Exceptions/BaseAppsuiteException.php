@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ingelby\OxAppsuite\Minimal\Exceptions;
+namespace Ingelby\Appsuite\Minimal\Exceptions;
 
 
 use yii\web\HttpException;
